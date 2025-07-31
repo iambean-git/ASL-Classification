@@ -42,7 +42,6 @@ def train(model, train_loader, train_N, random_trans, optimizer, loss_function, 
         total_loss += batch_loss.item()
         accuracy += get_batch_accuracy(output, y, train_N)
 
-    # print('Train - Loss: {:.4f} Accuracy: {:.4f}'.format(total_loss, accuracy))
     return total_loss, accuracy
 
 def validate(model, valid_loader, valid_N, loss_function, device):
@@ -68,6 +67,5 @@ def validate(model, valid_loader, valid_N, loss_function, device):
      # Confusion matrix 생성
     cm = confusion_matrix(y_true, y_pred)
 
-    # print('Valid - Loss: {:.4f} Accuracy: {:.4f}'.format(total_loss, accuracy))
     return total_loss, accuracy, cm, y_true, y_pred
 
